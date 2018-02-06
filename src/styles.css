@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+.navbar-brand {
+  background: url(logo.png) center / contain no-repeat;
+  width: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
