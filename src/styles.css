@@ -20,7 +20,8 @@ i {
 }
 
 #footer {
-  background-color: #ebebeb;
+  background-color: #F8F8F8;
+  border-top: 1px solid #E8E8E8;
 }
 
 #footer-text {
@@ -28,4 +29,25 @@ i {
   font-size: xx-small;
   vertical-align: bottom;
   color: #6b6b6b;
+}
+
+.footer-titles {
+  margin-top: 10%;
+}
+
+.footer-list {
+  padding-top: 10%;
+}
+
+.footer-list > a {
+  color: #444444;
+  font-size: small;
+}
+
+.footer-list > a:hover {
+  color: #444444;
+}
+
+.footer-right {
+  margin-top: 5%;
 }
