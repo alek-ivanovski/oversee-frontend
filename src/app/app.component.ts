@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {InvestmentManagementService} from "./services/investment-management.service";
+import {Investment} from "./model/investment";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'OverSee';
+  public investments: Investment[];
+
+  constructor (private investmentService: InvestmentManagementService) {
+
+  }
+
+  ngOnInit(): void {
+    this.investments = this.investmentService.getInvestments()
+  }
 }
