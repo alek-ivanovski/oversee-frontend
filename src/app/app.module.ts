@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {InvestmentManagementService} from "./services/investment-management.service";
+import {TradeManagementService} from "./services/trade-management.service";
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import {InvestmentManagementService} from "./services/investment-management.serv
   imports: [
     BrowserModule
   ],
-  providers: [InvestmentManagementService],
+  providers: [InvestmentManagementService, TradeManagementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

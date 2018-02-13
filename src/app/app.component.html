@@ -1,16 +1,71 @@
-<div class="row">
-  <nav class="navbar navbar-light  col-md-3">
-    <ul class="nav navbar-nav left-buffer">
-      <li *ngFor="let investment of investments" class="nav-item">
-        <p>
-          {{investment.symbol1}}/{{investment.symbol2}}
-        </p>
-      </li>
-    </ul>
-  </nav>
-  <!--<div class="col-md-9">-->
-    <!--<router-outlet></router-outlet>-->
-  <!--</div>-->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-striped table-hover table-responsive">
+        <thead class="">
+        <tr>
+          <td>COIN</td>
+          <td>UNITS</td>
+          <td>INVESTED</td>
+          <td>P/L($)</td>
+          <td>P/L(%)</td>
+          <td>VALUE</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let investment of investments">
+          <td>{{investment.symbol1}}/{{investment.symbol2}}</td>
+          <td>{{investment.units}}</td>
+          <td>${{investment.invested}}</td>
+          <td [style.color]="investment.pldollar > 0 ? 'green' : 'red'">
+            ${{investment.pldollar}}</td>
+          <td [style.color]="investment.plprocent > 0 ? 'green' : 'red'">
+            {{investment.plprocent}}%</td>
+          <td>${{investment.value}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--Total Profit/Loss-->
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading text-uppercase">
+          <div class="container-fluid">
+            <div class="col-sm-4">Total Invested</div>
+            <div class="col-sm-4">Profit</div>
+            <div class="col-sm-4">Equity</div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="container-fluid">
+            <div class="col-sm-4">${{totalInvested}}</div>
+            <div class="col-sm-4" [style.color]="profit > 0 ? 'green' : 'red'" >${{profit}}</div>
+            <div class="col-sm-4">${{totalValue}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+<!--<div class="row">-->
+  <!--<nav class="navbar navbar-light  col-md-3">-->
+    <!--<ul class="nav navbar-nav left-buffer">-->
+      <!--<li *ngFor="let investment of investments" class="nav-item">-->
+        <!--<p>-->
+
+        <!--</p>-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--</nav>-->
+  <!--&lt;!&ndash;<div class="col-md-9">&ndash;&gt;-->
+    <!--&lt;!&ndash;<router-outlet></router-outlet>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--</div>-->
 
 

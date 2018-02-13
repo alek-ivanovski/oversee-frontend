@@ -8,15 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="OverSee.ico">
 
-  <!--Bootsrap-->
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-   <!--Custom Fonts -->
+  <!--Custom Font-->
+  <link href="https://fonts.googleapis.com/css?family=Oxygen|Questrial|Work+Sans" rel="stylesheet">
   <link href="../node_modules/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
 
 </head>
-<body>
+<body style="font-family: 'Work Sans', sans-serif">
 
 <!--Navigation Bar-->
 <nav class="navbar navbar-default" role="navigation">
@@ -34,7 +31,7 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li><a href="#"><i class="fa fa-pie-chart"></i> Portfolio </a></li>
+      <li><a href="#"><i class="fa fa-pie-chart"></i> Portfolio</a></li>
       <li><a href="#"><i class="fa fa-bell"></i> Alarms</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-history"></i> Trade History
@@ -50,16 +47,16 @@
         </ul>
       </li>
     </ul>
-    <div class="col-sm-3 col-md-3">
-      <form class="navbar-form" role="search">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search" name="q">
-          <div class="input-group-btn">
-            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-          </div>
-        </div>
-      </form>
-    </div>
+    <!--<div class="col-sm-3 col-md-3">-->
+      <!--<form class="navbar-form" role="search">-->
+        <!--<div class="input-group">-->
+          <!--<input type="text" class="form-control" placeholder="Search" name="q">-->
+          <!--<div class="input-group-btn">-->
+            <!--<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</form>-->
+    <!--</div>-->
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><i class="fa fa-user"></i> Alek Ivanovski</a></li>
       <li class="dropdown">
@@ -76,8 +73,13 @@
   </div><!-- /.navbar-collapse -->
 </nav>
 
-<app-root></app-root>
+<!--App Component-->
+<div class="container">
+  <div class="row"><app-root></app-root></div>
+</div>
 
+
+<!--Footer-->
 <div class="container-fluid" id="footer">
   <div class="row">
     <div class="col-md-4 col-sm-2 text-center" id="logo">
@@ -98,7 +100,7 @@
             <ul class="list-unstyled">
               <li class="footer-list"><a href="#"><i class="fa fa-facebook-square"></i> FACEBOOK</a></li>
               <li class="footer-list"><a href="#"><i class="fa fa-instagram"></i> INSTAGRAM</a></li>
-              <li class="footer-list"><a href="#"><i class="fa fa-twitter-square"></i>TWITTER</a></li>
+              <li class="footer-list"><a href="#"><i class="fa fa-twitter-square"></i> TWITTER</a></li>
             </ul>
           </div>
           <div class="col-sm-4">
@@ -112,13 +114,7 @@
     </div>
   </div>
 </div>
-
-<!--jQuery-->
-<script src="../node_modules/jquery/dist/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script>
-<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+<!--End of footer-->
 
 </body>
 </html>

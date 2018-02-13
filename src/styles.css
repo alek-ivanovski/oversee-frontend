@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
+nav {
+  font-family: 'Work Sans', sans-serif;
+  font-size: large;
+}
+
 .navbar-brand {
   background: url(logo.png) center / contain no-repeat;
   width: 200px;
@@ -7,9 +12,9 @@
   margin-right: 15px;
 }
 
-i {
-  margin-right: 5px;
-}
+/*i {*/
+  /*margin-right: 5px;*/
+/*}*/
 
 #logo {
   padding: 10%;
@@ -50,4 +55,16 @@ i {
 
 .footer-right {
   margin-top: 5%;
+}
+
+@media screen and (max-width: 1000px) {
+  #footer {
+    background-color: lightgreen;
+    height: 200px;
+
+  }
+
+  #footer-text {
+    display: none;
+  }
 }
