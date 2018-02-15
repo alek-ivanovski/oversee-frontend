@@ -1,0 +1,8 @@
+{
+  "/api/ticker/BTC/USD": {
+    "target": "https://cex.io",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

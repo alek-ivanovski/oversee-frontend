@@ -5,7 +5,6 @@ import {Trade} from "./model/trade";
 import {TradeManagementService} from "./services/trade-management.service";
 import {CoinManagementService} from "./services/coin-management.service";
 import {Coin} from "./model/coin";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',

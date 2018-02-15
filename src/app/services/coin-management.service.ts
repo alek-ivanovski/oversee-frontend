@@ -7,7 +7,7 @@ export class CoinManagementService {
 
   constructor(private http: HttpClient) { }
 
-  coinUrl = "https://cex.io/api/ticker/BTC/USD";
+  coinUrl = "/api/ticker/BTC/USD";
 
   getCoin(){
     return this.http.get<Coin>(this.coinUrl);
