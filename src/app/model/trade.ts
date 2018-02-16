@@ -5,5 +5,5 @@ export class Trade {
   type: string;
   units: number;
   execute_at: number;
-  current: number;
+  date: string;
 }

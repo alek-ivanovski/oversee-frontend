@@ -3,6 +3,8 @@
   <div class="row">
     <div class="col-sm-12">
       <h2>Portfolio</h2>
+      <!-- Trigger the modal with a button -->
+      <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
       <hr>
       <table class="table table-striped table-hover table-responsive">
         <thead class="">
@@ -16,7 +18,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let investment of investments">
+        <tr *ngFor="let investment of investments" (click)="onSelect(investment)"
+            data-toggle="modal" data-target="#myModal">
           <td>{{investment.symbol1}}/{{investment.symbol2}}</td>
           <td>{{investment.units}}</td>
           <td *ngIf="investment.symbol2 == 'USD'">{{investment.invested | currency:'USD'}}</td>
@@ -57,6 +60,8 @@
     </div>
   </div>
 </div>
+
+<app-trade-new *ngIf="selectedInvestment" [investment]="selectedInvestment"></app-trade-new>
 
 <!--<div class="row">-->
   <!--<nav class="navbar navbar-light  col-md-3">-->

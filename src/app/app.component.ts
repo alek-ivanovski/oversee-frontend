@@ -20,6 +20,8 @@ export class AppComponent {
   public totalValue = 0;
   public profit = 0;
 
+  public selectedInvestment: Investment;
+
   // Temp testing variable
   public coinValue: Coin;
 
@@ -52,6 +54,10 @@ export class AppComponent {
         bid: data['bid'],
         ask: data['ask']
       });
+  }
+
+  onSelect(investment: Investment): void {
+    this.selectedInvestment = investment;
   }
 
 }

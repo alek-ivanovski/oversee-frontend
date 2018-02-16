@@ -13,7 +13,7 @@ export class TradeManagementService {
     type: 'BUY',
     units: 125.412,
     execute_at: 2465,
-    current: 8396.00
+    date: '12.03.2017'
   }, {
     id : 1,
     symbol1: 'XRP',
@@ -21,7 +21,7 @@ export class TradeManagementService {
     type: 'BUY',
     units: 100000,
     execute_at: 0.59,
-    current: 0.9685
+    date: '03.12.2016'
   }, {
     id : 2,
     symbol1: 'ETH',
@@ -29,7 +29,7 @@ export class TradeManagementService {
     type: 'BUY',
     units: 238,
     execute_at: 1233.4,
-    current: 838
+    date: '04.04.2017'
   }, {
     id : 3,
     symbol1: 'DASH',
@@ -37,7 +37,7 @@ export class TradeManagementService {
     type: 'BUY',
     units: 100,
     execute_at: 218.2,
-    current: 593
+    date:'21.06.2017'
   }, {
     id : 4,
     symbol1: 'ETH',
@@ -45,7 +45,7 @@ export class TradeManagementService {
     type: 'BUY',
     units: 100,
     execute_at: 833.22,
-    current: 838
+    date: '10.10.2016'
   }];
 
   public getTrades(): Trade[] {
