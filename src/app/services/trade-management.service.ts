@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Trade} from "../model/trade";
+import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class TradeManagementService {
 
   constructor() { }
+
+  delayMs = 500;
 
   private trades = [{
     id : 0,
@@ -50,6 +53,12 @@ export class TradeManagementService {
 
   public getTrades(): Trade[] {
     return this.trades;
+  }
+
+  // Fake server update; assume nothing can go wrong
+  saveTrade(trade: Trade): void  {
+    const newTrade = trade; // Demo: mutate cached hero
+    this.trades.concat(newTrade);
   }
 
 }

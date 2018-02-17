@@ -1,7 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Investment} from "../model/investment";
-import {forEach} from "@angular/router/src/utils/collection";
-import {validate} from "codelyzer/walkerFactory/walkerFn";
 
 @Injectable()
 export class InvestmentManagementService {

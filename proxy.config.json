@@ -1,5 +1,5 @@
 {
-  "/api/ticker/BTC/USD": {
+  "/api/ticker/*": {
     "target": "https://cex.io",
     "secure": true,
     "changeOrigin": true,

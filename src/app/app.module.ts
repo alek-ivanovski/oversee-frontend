@@ -8,6 +8,7 @@ import {TradeManagementService} from "./services/trade-management.service";
 import {CoinManagementService} from "./services/coin-management.service";
 import {HttpClientModule} from "@angular/common/http";
 import { TradeNewComponent } from './components/trade-new/trade-new/trade-new.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -16,7 +17,9 @@ import { TradeNewComponent } from './components/trade-new/trade-new/trade-new.co
     TradeNewComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [InvestmentManagementService, TradeManagementService, CoinManagementService],
   bootstrap: [AppComponent]
