@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import {Component, OnInit, Input, OnChanges} from '@angular/core';
 import {Investment} from "../../../model/investment";
 import {TradeManagementService} from "../../../services/trade-management.service";
 import {CoinManagementService} from "../../../services/coin-management.service";
@@ -16,20 +16,27 @@ export class TradeNewComponent implements OnInit {
   @Input() investment: Investment;
 
   private coinValue: Coin;
-  private tradeGroup: FormGroup;
   private trade: Trade;
 
+  // Form model is saved here
+  private tradeForm: FormGroup;
+
   constructor(private tradeService: TradeManagementService,
-  private coinService: CoinManagementService,
-  private fb: FormBuilder) {
+              private coinService: CoinManagementService,
+              private fb: FormBuilder) {
     this.createForm();
   }
 
-  createForm(){
-    this.tradeGroup = this.fb.group({
-      type: '',
-      units: ['', Validators.required],
-      price: ['', Validators.required],
+  ngOnInit() {
+
+  }
+
+  createForm() {
+    this.tradeForm = this.fb.group({
+      type: ['', Validators.required],
+      units: ['', [Validators.required, Validators.pattern("[0-9]{1,9}")]],
+      price: ['', [Validators.required, Validators.pattern("^[0-9]{1,9}[\.,]{0,1}[0-9]{1,2}")]],
+      date: ['', [Validators.required, Validators.pattern("^[0-3][0-9]\.[0-1][0-9]\.20[0-1][0-9]$")]]
     });
   }
 
@@ -40,7 +47,7 @@ export class TradeNewComponent implements OnInit {
   }
 
   prepareSaveTrade(): Trade {
-    const formModel = this.tradeGroup.value;
+    const formModel = this.tradeForm.value;
     return formModel;
   }
 
@@ -57,7 +64,7 @@ export class TradeNewComponent implements OnInit {
         ask: data['ask']
       });
 
-    this.tradeGroup.reset();
+     this.tradeForm.reset();
   }
 
 }

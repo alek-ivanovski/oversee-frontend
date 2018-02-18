@@ -15,29 +15,62 @@
         <p>{{coinValue.last | currency}}</p>
       </div>
 
+      <!--Modal Body-->
       <div class="modal-body">
-        <form class="form-group" [formGroup]="tradeGroup">
+        <form class="form-group" [formGroup]="tradeForm" (ngSubmit)="onSubmit()" novalidate>
           <!--Here will be the coin edit form-->
+
+          <!--Type of trade radio -->
           <div class="form-group radio">
-            <h5>Type of trade:</h5>
-            <label class="center-block"><input type="radio"
-                                               formControlName="type" value="BUY">BUY</label>
-            <label class="center-block"><input type="radio"
-                                               formControlName="type" value="SELL">SELL</label>
+            <h5><strong>Type of trade:</strong></h5>
+            <label><input type="radio" formControlName="type" value="BUY">BUY</label>
+            <label><input type="radio" formControlName="type" value="SELL">SELL</label>
           </div>
+
+          <!--Units text input-->
           <div class="form-group">
-            <label>Units:
+            <label class="center-block">Units:
               <input class="form-control" formControlName="units" placeholder="Enter quantity">
             </label>
           </div>
+          <div *ngIf="tradeForm.controls['units'].errors && !tradeForm.controls['units'].pristine"
+               class="alert alert-danger">
+            <div [hidden]="!tradeForm.controls['units'].errors.required">Units field is required!</div>
+            <div [hidden]="!tradeForm.controls['units'].errors.pattern">Units must be a number!</div>
+          </div>
+
+          <!--Trade price text input-->
           <div class="form-group">
-            <label>Trade price:
+            <label class="center-block">Trade price:
               <input class="form-control" formControlName="price" placeholder="Enter price">
             </label>
           </div>
+          <div *ngIf="tradeForm.controls['price'].errors && !tradeForm.controls['price'].pristine"
+               class="alert alert-danger">
+            <div [hidden]="!tradeForm.controls['price'].errors.required">Trade price field is required!</div>
+            <div [hidden]="!tradeForm.controls['price'].errors.pattern">Trade price must be a number!</div>
+          </div>
+
+          <!--Date text input of type DD.MM.YYYY-->
+          <div class="form-group">
+            <label class="center-block">Date:
+              <input class="form-control" formControlName="date" placeholder="DD.MM.YYYY">
+            </label>
+          </div>
+          <div *ngIf="tradeForm.controls['date'].errors && !tradeForm.controls['date'].pristine"
+               class="alert alert-danger">
+            <div [hidden]="!tradeForm.controls['date'].errors.required">Date field required!</div>
+            <div [hidden]="!tradeForm.controls['date'].errors.pattern">Date is invalid!</div>
+          </div>
+
+          <!--Submit button-->
           <button type="submit"
-                  [disabled]="tradeForm.pristine" class="btn btn-success">Save</button> &nbsp;
+                  [disabled]="tradeForm.pristine || tradeForm.invalid" class="btn btn-success">Save</button> &nbsp;
         </form>
+
+        <!--Temporary testing area-->
+        <p>Form value: {{ tradeForm.value | json }}</p>
+        <p>Form status: {{ tradeForm.status | json }}</p>
       </div>
 
     </div>

@@ -58,7 +58,7 @@ export class TradeManagementService {
   // Fake server update; assume nothing can go wrong
   saveTrade(trade: Trade): void  {
     const newTrade = trade; // Demo: mutate cached hero
-    this.trades.concat(newTrade);
+    this.trades.push(newTrade);
   }
 
 }
