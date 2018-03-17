@@ -1,0 +1,12 @@
+.container-fluid {
+  font-family: 'Work Sans', sans-serif;
+  font-size: large;
+  font-weight: 600;
+  color: #5e5e5e;
+}
+
+tr {
+  cursor: pointer;
+  padding-top: 20%;
+  padding-bottom: 2%;
+}

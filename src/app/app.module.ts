@@ -9,12 +9,14 @@ import {CoinManagementService} from "./services/coin-management.service";
 import {HttpClientModule} from "@angular/common/http";
 import { TradeNewComponent } from './components/trade-new/trade-new/trade-new.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TradeNewComponent
+    TradeNewComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,

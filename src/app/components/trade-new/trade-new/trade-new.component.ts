@@ -47,8 +47,14 @@ export class TradeNewComponent implements OnInit {
   }
 
   prepareSaveTrade(): Trade {
-    const formModel = this.tradeForm.value;
-    return formModel;
+    let trade: Trade = new Trade();
+    trade.symbol1 = this.tradeForm.value.symbol1;
+    trade.symbol2 = this.tradeForm.value.symbol2;
+    trade.type = this.tradeForm.value.type;
+    trade.units = this.tradeForm.value.units;
+    trade.execute_at = this.tradeForm.value.price;
+    trade.date = this.tradeForm.value.date;
+    return trade;
   }
 
   ngOnChanges() {
